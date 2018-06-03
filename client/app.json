@@ -1,0 +1,13 @@
+{
+    "pages": [
+        "pages/zhibo8/zhibo8",
+        "pages/index/index",
+        "pages/chat/chat"
+    ],
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#2e9ffe",
+      "navigationBarTitleText": "直播吧",
+      "navigationBarTextStyle": "white"
+    }
+}

@@ -1,0 +1,9 @@
+  <view class="tabs">
+    <view
+      wx:for="{{dataSource}}" 
+      wx:key="key"
+      class="tab-item {{current.key == item.key ? 'active' : ''}}" 
+      data-current="{{item}}" bindtap="onClickTabItem">
+      {{item.name}}
+    </view>
+  </view>
