@@ -1,7 +1,7 @@
 /**
  * @fileOverview 微信小程序的入口文件
  */
-
+var aldstat = require("./utils/ald-stat.js");
 var qcloud = require('./vendor/wafer2-client-sdk/index');
 var config = require('./config');
 

@@ -52,6 +52,12 @@ Page({
       currentType: gameType
     });
     wx.setStorageSync(LAST_TYPE_KEY, gameType);
+
+    // 埋点
+    var app = getApp();
+    app.aldstat.sendEvent('selectGamaType', {
+      name: gameType.key
+    }); 
   },
 
   onGameTap: function(e) {
