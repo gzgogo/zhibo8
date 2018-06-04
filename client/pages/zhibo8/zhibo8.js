@@ -26,12 +26,18 @@ Page({
   },
 
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载数据'
+    });
+
     var lastType = wx.getStorageSync(LAST_TYPE_KEY);
     this.setData({
       currentType: lastType || this.data.gameTypes[0]
     });
 
-    this.fetchData();
+    this.fetchData(function () {
+      wx.hideLoading();
+    });
   },
 
   onPullDownRefresh: function() {
@@ -57,12 +63,22 @@ Page({
     
     wx.request({
       url: 'https://7nlpua3m.qcloud.la/weapp/zhibo', //仅为示例，并非真实的接口地址
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
       success: function (res) {
         console.log(res.data);
         self.extract(res.data);
+        wx.setStorageSync('data', res.data);
+
+        typeof cb === 'function' && cb();
+      },
+      fail: function() {
+        try {
+          var value = wx.getStorageSync('data')
+          if (value) {
+            self.extract(res.data);
+          }
+        } catch (e) {
+
+        }
 
         typeof cb === 'function' && cb();
       }

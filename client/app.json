@@ -9,5 +9,9 @@
       "navigationBarBackgroundColor": "#2e9ffe",
       "navigationBarTitleText": "直播吧",
       "navigationBarTextStyle": "white"
+    },
+    "networkTimeout": {
+      "request": 5000,
+      "downloadFile": 5000
     }
 }

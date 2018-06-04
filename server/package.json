@@ -1,15 +1,15 @@
 {
-  "name": "koa-weapp-demo",
+  "name": "zhibo8-server",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "start": "pm2 start process.prod.json --no-daemon",
     "local-dev": "nodemon --config nodemon.json app.js",
-    "local-debug": "nodemon debug --config nodemon.json app.js",
+    "local-debug": "nodemon --inspect --config nodemon.json app.js",
     "initdb": "npm install && node tools/initdb.js"
   },
-  "author": "Jason",
+  "author": "gongzhen",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.15.3",

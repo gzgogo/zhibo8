@@ -16,6 +16,7 @@
   padding: 24rpx 30rpx;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #eef1f3;  
   background-color: white;  
 }
 
