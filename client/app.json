@@ -6,8 +6,8 @@
     ],
     "window": {
       "backgroundTextStyle": "light",
-      "navigationBarBackgroundColor": "#2e9ffe",
-      "navigationBarTitleText": "直播吧",
+      "navigationBarBackgroundColor": "#111617",
+      "navigationBarTitleText": "看个球",
       "navigationBarTextStyle": "white"
     },
     "networkTimeout": {

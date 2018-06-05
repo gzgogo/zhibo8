@@ -1,4 +1,5 @@
 .lives {
+  font-family: 'wawa-gb';
   background-color: #eef1f3; 
 }
 
