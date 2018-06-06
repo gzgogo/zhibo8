@@ -67,6 +67,7 @@
 .live .game .game-team .name {
   margin-left: 30rpx;
   font-size: 32rpx;
+  white-space: nowrap;
 }
 
 .live .game .game-keywords {
