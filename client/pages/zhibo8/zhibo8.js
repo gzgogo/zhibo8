@@ -1,4 +1,6 @@
 //index.js
+var config = require('../../config');
+
 var LAST_TYPE_KEY = 'lastType';
 
 var app = getApp()
@@ -23,6 +25,13 @@ Page({
     }],
     lives: [],
     liveMap: {}
+  },
+
+  onShareAppMessage: function (res) {
+    return {
+      title: '看个球',
+      path: 'pages/zhibo8/zhibo8'
+    }
   },
 
   onLoad: function (options) {
@@ -68,7 +77,7 @@ Page({
     var self = this;
     
     wx.request({
-      url: 'https://7nlpua3m.qcloud.la/weapp/zhibo', //仅为示例，并非真实的接口地址
+      url: config.service.zhiboUrl,
       success: function (res) {
         console.log(res.data);
         self.extract(res.data);

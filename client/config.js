@@ -3,7 +3,7 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-var host = 'https://7nlpua3m.qcloud.la';
+var host = 'https://836973437.zhibolives.xyz';
 
 var config = {
 
@@ -21,7 +21,9 @@ var config = {
         tunnelUrl: `${host}/weapp/tunnel`,
 
         // 上传图片接口
-        uploadUrl: `${host}/weapp/upload`
+        uploadUrl: `${host}/weapp/upload`,
+
+        zhiboUrl: `${host}/weapp/zhibo`,
     }
 };
 

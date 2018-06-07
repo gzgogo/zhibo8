@@ -1,4 +1,5 @@
 .lives {
+  padding-top: 80rpx;
   font-family: 'wawa';
   background-color: #eef1f3; 
 }
