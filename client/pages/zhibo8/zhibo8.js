@@ -128,6 +128,9 @@ Page({
 
         item.list.forEach(function(game) {
           if ([game.type, game.label].join().indexOf(gameType.key) > -1) {
+            if (gameType.key.toLowerCase() === 'nba' && game.type !== 'basketball') {
+              return;
+            }
             live.list.push(game)
           }
         })
