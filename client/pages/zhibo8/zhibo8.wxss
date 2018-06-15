@@ -18,6 +18,7 @@
   padding: 24rpx 30rpx;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   border-bottom: 1px solid #eef1f3;  
   background-color: white;  
 }
@@ -39,7 +40,7 @@
 }
 
 .live .game .game-teams-keywords {
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
