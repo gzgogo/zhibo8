@@ -57,6 +57,12 @@ Page({
   },
 
   onTypeChange: function(e) {
+    if (wx.pageScrollTo) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    }
+    
     var gameType = e.detail;
     this.setData({
       currentType: gameType
@@ -80,7 +86,6 @@ Page({
     // var data = getData();
     // console.log(data);
     // self.extract(data);
-
     // cb();
     
     wx.request({

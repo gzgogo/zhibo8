@@ -1,4 +1,6 @@
-var data = [
+var padZero = require('../utils/util.js').padZero;
+
+const json = [
   {
     "formatDate": "2018-06-15",
     "date": "06月15日 星期五",
@@ -5191,11 +5193,25 @@ var data = [
 ];
 
 function getData() {
+  var res = [];
+
   var date = new Date();
-  var sdate = `${date.getFullYear()}-0${date.getMonth() + 1}-${date.getDate()}`;
-  return data.filter(item => {
+  var sdate = `${date.getFullYear()}-${padZero(date.getMonth() + 1, 2)}-${date.getDate()}`;
+  var stime = `${padZero(date.getHours(), 2)}:${padZero(date.getMinutes(), 2)}`;
+  console.log('sdate: %s, stime: %s', sdate, stime);
+
+  res = json.filter(item => {
     return item.formatDate >= sdate;
   });
+
+  var first = res[0];
+  if (first.formatDate === sdate) {
+    first.list = first.list.filter(game => {
+      return parseInt(game.time.split(':')[0]) >= date.getHours();
+    }) 
+  }
+
+  return res;
 }
 
 module.exports = getData;
