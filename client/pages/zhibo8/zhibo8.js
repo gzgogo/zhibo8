@@ -1,5 +1,5 @@
 //index.js
-var getData = require('../../data/zhibo.js');
+// var getData = require('../../data/zhibo.js');
 var config = require('../../config');
 
 var LAST_TYPE_KEY = 'lastType';
@@ -77,34 +77,34 @@ Page({
   fetchData: function(cb) {
     var self = this;
 
-    var data = getData();
-    console.log(data);
-    self.extract(data);
+    // var data = getData();
+    // console.log(data);
+    // self.extract(data);
 
-    cb();
+    // cb();
     
-    // wx.request({
-    //   url: config.service.zhiboUrl,
-    //   success: function (res) {
-    //     console.log(res.data);
-    //     self.extract(res.data);
-    //     wx.setStorageSync('data', res.data);
+    wx.request({
+      url: config.service.zhiboUrl,
+      success: function (res) {
+        console.log(res.data);
+        self.extract(res.data);
+        wx.setStorageSync('data', res.data);
 
-    //     typeof cb === 'function' && cb();
-    //   },
-    //   fail: function() {
-    //     try {
-    //       var value = wx.getStorageSync('data')
-    //       if (value) {
-    //         self.extract(res.data);
-    //       }
-    //     } catch (e) {
+        typeof cb === 'function' && cb();
+      },
+      fail: function() {
+        try {
+          var value = wx.getStorageSync('data')
+          if (value) {
+            self.extract(res.data);
+          }
+        } catch (e) {
 
-    //     }
+        }
 
-    //     typeof cb === 'function' && cb();
-    //   }
-    // })
+        typeof cb === 'function' && cb();
+      }
+    })
   },
 
   extract(data) {
